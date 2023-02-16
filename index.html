@@ -14,10 +14,12 @@
     <div id="app">
       <h2>{{ title }} -- {{ author }} -- {{ age }}</h2>
       <!-- v-on is a directive, click is a event -->
-      <button v-on:click="age++">Increase Age</button>
-      <button v-on:click="age--">Decrease Age</button>
+      <!-- the function without argument pass without  argument, as a reference?-->
+      <button v-on:click="increaseAge">Increase Age</button>
+      <button v-on:click="decreaseAge">Decrease Age</button>
       <!-- @ is shortcut for v-on -->
-      <button @:click="title='Jingyesi'">Change Title</button>
+      <!-- But the function with argument, can just call it? -->
+      <button @:click="changeTitle('Jingyesi')">Change Title</button>
     </div>
     <!-- source the app.js  -->
     <script src="app.js"></script>
