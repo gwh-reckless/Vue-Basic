@@ -13,9 +13,21 @@
     <h1>Hello Vue</h1>
     <!-- create a div with id "app"  to be the mouting place -->
     <div id="app">
+      <!-- attribute/data binding -->
+      <!-- href is an attribute -->
+      <!-- use vbind:attr can use the vars inside data -->
+      <a v-bind:href="url">best website ever</a>
+      <br />
+      <!-- shortcut -->
+      <a :href="url">best website ever</a>
+
       <div v-if="showBooks">
         <ul>
-          <li v-for="book in books">{{book.title }} -- {{book.author}}</li>
+          <li v-for="book in books">
+            <img :src="book.img" :alt="book.title" />
+            <p>{{book.title }}</p>
+            <p>{{book.author}}</p>
+          </li>
         </ul>
       </div>
     </div>
