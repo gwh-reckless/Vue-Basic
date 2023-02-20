@@ -40,6 +40,8 @@
     <h1>Hello Vue</h1>
     <!-- create a div with id "app"  to be the mouting place -->
     <div id="app">
+      <p>{{ filteredBooks}}</p>
+
       <!-- attribute/data binding -->
       <!-- href is an attribute -->
       <!-- use vbind:attr can use the vars inside data -->
@@ -53,8 +55,9 @@
           <!-- dynamic class -->
           <!-- key: className -->
           <!-- value: the condition -->
+          <!-- Now we filter in filteredBooks -->
           <li
-            v-for="book in books"
+            v-for="book in filteredBooks"
             v-bind:class="{fav: book.isFav, fav2: book.isFav}"
           >
             <img :src="book.img" :alt="book.title" />
