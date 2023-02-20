@@ -13,32 +13,10 @@
     <h1>Hello Vue</h1>
     <!-- create a div with id "app"  to be the mouting place -->
     <div id="app">
-      <!-- use v-if directive to conditional rendering -->
       <div v-if="showBooks">
-        <h2>{{ title }} -- {{ author }} -- {{ age }}</h2>
-        <!-- v-on is a directive, click is a event -->
-        <!-- the function without argument pass without  argument, as a reference?-->
-        <button v-on:click="increaseAge">Increase Age</button>
-        <button v-on:click="decreaseAge">Decrease Age</button>
-        <!-- @ is shortcut for v-on -->
-        <!-- But the function with argument, can just call it? -->
-        <button @:click="changeTitle('Jingyesi')">Change Title</button>
-      </div>
-      <button v-on:click="changeToggle">
-        <span v-if="showBooks">Hide Books</span>
-        <span v-else>Show Books</span>
-      </button>
-      <!-- Difference between  v-show and v-if,v-else :  v-show won't delete the elements from dom, while set display: none-->
-      <div v-show="showBooks">currently showing books</div>
-
-      <br />
-      <div class="box" @mouseover="handleEvent($event, 5)">
-        mouseover (enter)
-      </div>
-      <div class="box" @mouseleave="handleEvent">mouseleave</div>
-      <div class="box" @dblclick="handleEvent">double clock</div>
-      <div class="box" @mousemove="handleMouseMove">
-        position - {{x}} - {{y}}
+        <ul>
+          <li v-for="book in books">{{book.title }} -- {{book.author}}</li>
+        </ul>
       </div>
     </div>
     <!-- source the app.js  -->
