@@ -60,6 +60,7 @@
             <img :src="book.img" :alt="book.title" />
             <p>{{book.title }}</p>
             <p>{{book.author}}</p>
+            <button @click="toggleFav(book)">Fav</button>
           </li>
         </ul>
       </div>
