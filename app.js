@@ -6,6 +6,8 @@ const app = Vue.createApp({
       title: 'Qiangjinjiu',
       author: 'Libai',
       age: '1000',
+      x: 0,
+      y: 0,
     };
   },
   //   methods object specify the methods can use inside div#app
@@ -22,6 +24,16 @@ const app = Vue.createApp({
     },
     changeToggle() {
       this.showBooks = !this.showBooks;
+    },
+    handleEvent(e, data) {
+      console.log(e, e.type);
+      if (data) {
+        console.log(data);
+      }
+    },
+    handleMouseMove(e) {
+      this.x = e.offsetX;
+      this.y = e.offsetY;
     },
   },
 });

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- import the vue using cdn -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Vue-Baisc</title>
   </head>
   <body>
@@ -29,6 +30,16 @@
       </button>
       <!-- Difference between  v-show and v-if,v-else :  v-show won't delete the elements from dom, while set display: none-->
       <div v-show="showBooks">currently showing books</div>
+
+      <br />
+      <div class="box" @mouseover="handleEvent($event, 5)">
+        mouseover (enter)
+      </div>
+      <div class="box" @mouseleave="handleEvent">mouseleave</div>
+      <div class="box" @dblclick="handleEvent">double clock</div>
+      <div class="box" @mousemove="handleMouseMove">
+        position - {{x}} - {{y}}
+      </div>
     </div>
     <!-- source the app.js  -->
     <script src="app.js"></script>
